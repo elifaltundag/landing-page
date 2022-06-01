@@ -18,13 +18,16 @@
     --clr-gray-800: 0, 0%, 80%;
     --clr-gray-900: 0, 0%, 90%; 
     
-    --clr-base-bright: hsl(25, 80%, 50%);
-    --clr-base-mid: hsl(25, 70%, 55%);
-    --clr-base-dark: hsl(25, 80%, 30%);
-
-    --clr-accent: hsl(190, 70%, 60%);
+    --clr-base-light: 25, 70%, 62%;
+    --clr-base-bright: 25, 80%, 50%;
+    --clr-base-mid: 25, 70%, 55%;
+    --clr-base-dark: 25, 80%, 30%;
+ 
+    --clr-accent-mid: 190, 70%, 60%;
      
-
+    /** Border radius */
+    --bord-rad-100: 3px;
+    --bord-rad-200: 5px;
 
 
     /** Margins, paddings, gaps */
@@ -65,9 +68,6 @@ img {
 
 
 
-
-
-
 /*! ------------------------------ */
 /*! UTILITY CLASSES                */
 /*! ------------------------------ */
@@ -77,8 +77,26 @@ img {
 }
 
 .par-bg {
-    background-color: hsla(var(--clr-gray-900), 0.5)
+    background-color: hsla(var(--clr-gray-900), 0.5);
+    padding: 3em 3em 3em 0;
+    margin-top: 5em;
+    margin-bottom: 2em;
 }
+
+.btn {
+    background-color: hsl(var(--clr-accent-mid));
+    color: hsl(var(--clr-gray-100));
+    font-size: 1.5rem;
+    padding: 0.5em 1em;
+    border-radius: var(--bord-rad-200, 5px);    
+    border: none;
+}
+
+.color-box {
+    border-radius: var(--bord-rad-100, 3px);
+}
+
+
 
 /*! ------------------------------ */
 /*! GRID                           */
@@ -89,7 +107,16 @@ img {
     grid-template-rows: repeat(5, 1fr);
 }
 
-.section-title-left, 
+.info-text {
+    display: flex;
+    flex-direction: column;
+    row-gap: 1.5em;
+    z-index: 500;
+}
+
+
+
+/* .section-title-left, 
 .section-title-right {
     grid-row: 1 / 2;
     grid-column: 1 / 2;
@@ -108,7 +135,7 @@ img {
     grid-row: 5 / 6;
     grid-column: 1 / 2;
     z-index: 500;
-}
+} */
 
 /* .photo-1-left,
 .photo-1-right {
@@ -131,17 +158,19 @@ h1 {
     font-style: italic;
     font-weight: 100;
     font-size: 5rem;
-    color: var(--clr-base-bright);
+    color: hsl(var(--clr-base-bright));
+    width: 15ch;
 }
 
 h2, h3 {
     font-family: var(--ff-srf);
     font-size: 3rem;
-    color: var(--clr-base-dark);
+    color: hsl(var(--clr-base-dark));
+    font-weight: 700;
 }
 
 p, button {
-    font-family: var(--ff-sans-srf);
+    font-family: hsl(var(--ff-sans-srf));
     font-size: 1.2rem;
 }
 
@@ -159,13 +188,19 @@ p, button {
     font-size: 1.2rem;
 }
 
-.btn {
-    background-color: var(--clr-accent);
-    color: hsl(var(--clr-gray-100));
-    font-size: 1.5rem;
-    padding: 0.5em 1em;
-    border-radius: 5px;    
-    border: none;
+#africa-color-box-1 {
+    background-color: hsl(var(--clr-base-light));
+    z-index: 200;
+}
+
+#africa-color-box-2 {
+    background-color: hsl(var(--clr-base-dark));
+    z-index: 100;
+}
+
+#africa-color-box-3 {
+    background-color: hsla(var(--clr-accent-mid), 08);
+    z-index: 300;
 }
 
 
@@ -192,7 +227,13 @@ p, button {
         grid-template-columns: repeat(8, 1fr);
         grid-template-rows: repeat(5, 1fr);
     }
-    .section-title-left {
+
+    .info-text {
+        grid-row: 1 / 5;
+        grid-column: 1 / 6;
+    }
+
+    /* .section-title-left {
         grid-row: 1 / 2;
         grid-column: 1 / 5;
     }
@@ -215,7 +256,7 @@ p, button {
     .btn-right {
         grid-row: 5 / 6;
         grid-column: 5 / 8;
-    }
+    } */
 
    
     
@@ -227,12 +268,45 @@ p, button {
     /** GRID */
     .grid-section {
         display: grid;
-        grid-template-columns: repeat(12, 1fr);
+        grid-template-columns: repeat(16, 1fr);
         grid-template-rows: repeat(5, 1fr);
     }
 
+    .info-text {
+        grid-row: 1 / 5;
+        grid-column: 1 / 6;
+    }
+
+    .color-boxes {
+        grid-row: 1 / 6;
+        grid-column: 4 / 17;
+        display: grid;
+        grid-template-rows: repeat(10, 1fr);
+        grid-template-columns: repeat(10, 1fr);        
+    }
+
+    .photos {
+        grid-row: 2 / 5;
+        grid-column: 7 / 16;
+        border: 2px solid black;
+        z-index: 500;
+    }
+
+    #africa-color-box-1 {
+        grid-row: 2 / 8;
+        grid-column: 1 / 4;
+    }
     
-    .section-title-left {
+    #africa-color-box-2 {
+        grid-row: 1 / 11;
+        grid-column: 3 / 6;
+    }
+    
+    #africa-color-box-3 {
+        grid-row: 4 / 10;
+        grid-column: 5 / 11;
+    }
+    /* .section-title-left {
         grid-row: 1 / 2;
         grid-column: 1 / 6;
     }
@@ -284,5 +358,5 @@ p, button {
     .photo3-right {
         grid-row: ;
         grid-column: ; 
-    }
+    } */
 }
