@@ -1,0 +1,266 @@
+/*! ------------------------------ */
+/*! CUSTOM PROPERTIES              */
+/*! ------------------------------ */
+:root {
+    /** Fonts */
+    --ff-srf: "Playfair Display", serif;
+    --ff-sans-srf: "Jost", sans-serif;
+    --ff-curs: "Great Vibes", cursive;
+
+    /** Colors */
+    --clr-gray-100: 0, 0%, 10%;
+    --clr-gray-200: 0, 0%, 20%;
+    --clr-gray-300: 0, 0%, 30%;
+    --clr-gray-400: 0, 0%, 40%;
+    --clr-gray-500: 0, 0%, 50%;
+    --clr-gray-600: 0, 0%, 60%;
+    --clr-gray-700: 0, 0%, 70%;
+    --clr-gray-800: 0, 0%, 80%;
+    --clr-gray-900: 0, 0%, 90%; 
+    
+    --clr-base-bright: hsl(25, 80%, 50%);
+    --clr-base-mid: hsl(25, 70%, 55%);
+    --clr-base-dark: hsl(25, 80%, 30%);
+
+    --clr-accent: hsl(190, 70%, 60%);
+     
+
+
+
+    /** Margins, paddings, gaps */
+}
+
+
+
+/*! ------------------------------ */
+/*! RESET CSS                      */
+/*! ------------------------------ */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+body,
+h1, h2, h3, h4, h5, h6, p 
+picture, figure, img {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: hsl(var(--clr-gray-900));
+    color: hsl(var(--clr-gray-200));
+}
+
+
+
+
+
+
+
+
+/*! ------------------------------ */
+/*! UTILITY CLASSES                */
+/*! ------------------------------ */
+.container {
+    width: min(90%, 150ch);
+    margin: 0 auto;
+}
+
+/*! ------------------------------ */
+/*! GRID                           */
+/*! ------------------------------ */
+.grid-section {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(5, auto);
+}
+
+.section-title-left, 
+.section-title-right {
+    grid-row: 1 / 2;
+    grid-column: 1 / 2;
+    z-index: 500;
+}
+
+.par-left,
+.par-right {
+    grid-row: 2 / 5;
+    grid-column: 1 / 2;
+    z-index: 500;
+}
+
+.btn-left,
+.btn-right {
+    grid-row: 5 / 6;
+    grid-column: 1 / 2;
+    z-index: 500;
+}
+
+.photo-1-left,
+.photo-1-right {
+    grid-row: 1 / 6;
+    grid-column: 1 / 2; 
+}
+
+.photo-2-left, .photo3-left,
+.photo-2-right, .photo3-right {
+    display: none;
+}
+
+
+/*! ------------------------------ */
+/*! TYPOGRAPHY                     */
+/*! ------------------------------ */
+h1 {
+    font-family: var(--ff-srf);
+    font-style: italic;
+    font-weight: 100;
+    font-size: 5rem;
+}
+
+h2, h3 {
+    font-family: var(--ff-srf);
+    font-size: 3rem;
+}
+
+p, button {
+    font-family: var(--ff-sans-srf);
+    font-size: 1.2rem;
+}
+
+
+
+
+/*! ------------------------------ */
+/*! SECTIONAL ELEMENTS             */
+/*! ------------------------------ */
+#title-text {
+    font-size: 2rem;
+}
+
+#description {
+    font-size: 1.2rem;
+}
+
+.btn {
+    background-color: var(--clr-accent);
+    color: hsl(var(--clr-gray-100));
+    font-size: 1.5rem;
+    padding: 0.5em 1em;
+    border-radius: 5px;    
+    border: none;
+}
+
+
+
+
+/*! ------------------------------ */
+/*! HOVER STATES                   */
+/*! ------------------------------ */
+@media screen and (hover) {
+    .btn:hover {
+        cursor: pointer;
+    }
+}
+
+
+
+/*! ------------------------------ */
+/*! MEDIA QUERIES                  */
+/*! ------------------------------ */
+@media screen and (min-width: 650px) {
+    /** GRID */
+    .grid-section {
+        display: grid;
+        grid-template-columns: repeat(8, 1fr);
+        grid-template-rows: repeat(5, auto);
+    }
+    .section-title-left {
+        grid-row: 1 / 2;
+        grid-column: 1 / 5;
+    }
+    .section-title-right {
+        grid-row: 1 / 2;
+        grid-column: 5 / 9;
+    }
+    .par-left {
+        grid-row: 2 / 5;
+        grid-column: 1 / 5; 
+    }
+    .par-right {
+        grid-row: 2 / 5;
+        grid-column: 5 / 9;
+    }
+    .btn-left {
+        grid-row: 5 / 6;
+        grid-column: 1 / 4;
+    }
+    .btn-right {
+        grid-row: 5 / 6;
+        grid-column: 5 / 8;
+    }
+    .photo-1-left {
+        grid-row: ;
+        grid-column: ; 
+    }
+    .photo-1-right {
+        grid-row: ;
+        grid-column: ; 
+    }
+    .photo-2-left {
+        grid-row: ;
+        grid-column: ;
+    }
+    .photo3-left {
+        grid-row: ;
+        grid-column: ; 
+    }
+    .photo-2-right {
+        grid-row: ;
+        grid-column: ;
+    } 
+    .photo3-right {
+        grid-row: ;
+        grid-column: ; 
+    }
+}
+
+@media screen and (min-width: 900px) {
+    /** GRID */
+    .grid-section {
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        grid-template-rows: repeat(5, auto);
+    }
+
+    
+    .section-title-left {
+        grid-row: 1 / 2;
+        grid-column: 1 / 5;
+    }
+
+    .section-title-right {
+        grid-row: 1 / 2;
+        grid-column: 9 / 13;
+    }
+
+    .par-left {
+        grid-row: 2 / 5;
+        grid-column: 1 / 5; 
+    }
+
+    .par-right {
+        grid-row: 2 / 5;
+        grid-column: 9 / 13;
+    }
+
+    .btn-left {
+        grid-row: 5 / 6;
+        grid-column: 1 / 4;
+    }
+
+    .btn-right {
+        grid-row: 5 / 6;
+        grid-column: 9 / 12;
+    }
+}
