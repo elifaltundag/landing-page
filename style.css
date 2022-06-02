@@ -65,7 +65,7 @@ body {
 
 figure {
     width: 100%;
-    height: 250px;
+    height: 350px;
     overflow: hidden;
 }
 
@@ -75,7 +75,11 @@ img {
     display: block;
 }
 
-
+li, ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
 
 /*! ------------------------------ */
 /*! UTILITY CLASSES                */
@@ -94,7 +98,7 @@ img {
 .btn {
     background-color: hsl(var(--clr-accent-mid));
     color: hsl(var(--clr-gray-100));
-    font-size: 2rem;
+    font-size: 2.5rem;
     margin: 0.2em 0;
     border-radius: var(--bord-rad-200, 5px);    
     border: none;
@@ -104,6 +108,41 @@ img {
     border-radius: var(--bord-rad-100, 3px);
 }
 
+.color-boxes {
+    opacity: 0.8;
+}
+
+.carousel {
+    z-index: 500;
+    background-color: hsla(var(--clr-gray-900), var(--opac, 0.7));
+}
+
+
+/*! ------------------------------ */
+/*! TYPOGRAPHY                     */
+/*! ------------------------------ */
+h1 {
+    font-family: var(--ff-srf);
+    font-style: italic;
+    font-weight: 100;
+    font-size: 5rem;
+    color: hsl(var(--clr-base-bright));
+    width: 15ch;
+}
+
+h2, h3 {
+    font-family: var(--ff-srf);
+    font-size: 3rem;
+    color: hsl(var(--clr-base-dark));
+    font-weight: 700;
+}
+
+p, button {
+    font-family: hsl(var(--ff-sans-srf));
+    font-size: 1.2rem;
+}
+
+
 
 
 /*! ------------------------------ */
@@ -112,22 +151,21 @@ img {
 .grid-section {
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: repeat(5, 1fr);
+    grid-template-rows: repeat(5, auto);
 }
 
 .info-text {
+    grid-row: 1 / 3;
+    grid-column: 1 / 2;
     display: grid;
     grid-template-rows: repeat(3, auto);
     z-index: 500;
 }
 
-.photos {
-    z-index: 500;
-    background-color: hsla(var(--clr-gray-900), var(--opac, 0.7));
+.carousel {
+    grid-row: 4 / 6;
+    grid-column: 1 / 2;
 }
-
-
-
 /* .section-title-left, 
 .section-title-right {
     grid-row: 1 / 2;
@@ -160,31 +198,80 @@ img {
 .photo-2-right, .photo3-right {
     display: none;
 } */
-
-
 /*! ------------------------------ */
-/*! TYPOGRAPHY                     */
+/*! CAROUSEL                       */
 /*! ------------------------------ */
-h1 {
-    font-family: var(--ff-srf);
-    font-style: italic;
-    font-weight: 100;
-    font-size: 5rem;
-    color: hsl(var(--clr-base-bright));
-    width: 15ch;
+.carousel {
+    width: 100%;
+    height: auto;
+    display: grid;
+    grid-template-areas: 
+        "btn-up photos btn-down"
+        "photos-nav photos-nav photos-nav";
 }
 
-h2, h3 {
-    font-family: var(--ff-srf);
-    font-size: 3rem;
-    color: hsl(var(--clr-base-dark));
-    font-weight: 700;
+.carousel-photos {
+    grid-area: photos;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1em;   
 }
 
-p, button {
-    font-family: hsl(var(--ff-sans-srf));
-    font-size: 1.2rem;
+/** Photo container */
+.photo-container {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
 }
+
+/** Photo */
+.photo {
+    width: 100%;
+    height: 400px;
+    display: block;
+}
+
+.carousel-nav {
+    grid-area: photos-nav;
+    background-color: red;
+    width: 100%;
+}
+
+
+
+.btn-up {
+    grid-area: btn-up;
+}
+
+.btn-down {
+    grid-area: btn-down;
+}
+
+
+
+
+/* .carousel-photos {
+    position: relative;
+    grid-area: "photos";
+}
+
+#btn-up {
+    grid-area: "btn-up";
+}
+
+#btn-up {
+    grid-area: "btn-down";
+}
+
+.carousel-photos__item {
+    position: absolute;
+    top: 0;
+    right: 0;
+} */
+
+
 
 
 
@@ -322,7 +409,7 @@ p, button {
         grid-template-columns: repeat(10, 1fr);        
     }
 
-    .photos {
+    .carousel {
         grid-row: 2 / 6;
         grid-column: 7 / 16;
     }
