@@ -63,17 +63,6 @@ body {
     color: hsl(var(--clr-gray-100));
 }
 
-figure {
-    width: 100%;
-    height: 350px;
-    overflow: hidden;
-}
-
-img {
-    max-width: auto;
-    height: 100%;
-    display: block;
-}
 
 li, ul {
     list-style: none;
@@ -90,26 +79,32 @@ li, ul {
 }
 
 .par-bg {
-    background-color: hsla(var(--clr-gray-900), var(--opac, 0.7));
+    background-color: hsla(var(--clr-gray-500), var(--opac, 0.7));
     padding: 1em 1em 0.5em 0;
     margin-bottom: 2em;
 }
 
 .btn {
-    background-color: hsl(var(--clr-accent-mid));
-    color: hsl(var(--clr-gray-100));
-    font-size: 2.5rem;
-    margin: 0.2em 0;
     border-radius: var(--bord-rad-200, 5px);    
     border: none;
+    z-index: 500;
+    cursor: pointer;
 }
 
-.color-box {
-    border-radius: var(--bord-rad-100, 3px);
+.btn-discover {
+    background-color: hsl(var(--clr-accent-mid));
+    color: hsl(var(--clr-gray-100));
+    padding: 1em;
+    /* border: 5px solid darkmagenta; */
 }
 
 .color-boxes {
     opacity: 0.8;
+    /* border: 5px solid darkslategrey; */
+}
+
+.color-box {
+    border-radius: var(--bord-rad-100, 3px);
 }
 
 .carousel {
@@ -125,24 +120,29 @@ h1 {
     font-family: var(--ff-srf);
     font-style: italic;
     font-weight: 100;
-    font-size: 5rem;
+    font-size: clamp(2rem, 1rem + 6vw, 6rem);
     color: hsl(var(--clr-base-bright));
     width: 15ch;
 }
 
-h2, h3 {
+h2 {
     font-family: var(--ff-srf);
-    font-size: 3rem;
     color: hsl(var(--clr-base-dark));
     font-weight: 700;
+    font-size: clamp(2.3rem, 0.8rem + 6vw, 3rem);
 }
 
 p, button {
-    font-family: hsl(var(--ff-sans-srf));
-    font-size: 1.2rem;
+    font-family: var(--ff-sans-srf);
 }
 
+p {
+    font-size: clamp(1rem, 0.5rem + 1vw, 1.2rem);
+}
 
+button {
+    font-size: clamp(1.5rem, 0.5rem + 2vw, 1.8rem);
+}
 
 
 /*! ------------------------------ */
@@ -155,17 +155,43 @@ p, button {
 }
 
 .info-text {
+    display: grid;
+    grid-template-rows: repeat(3,auto);
+    z-index: 700;
+    background-color: transparent;
+    /* border: 2px solid blue; */
+}
+
+.info-text-left,
+.info-text-righ {
     grid-row: 1 / 3;
     grid-column: 1 / 2;
-    display: grid;
-    grid-template-rows: repeat(3, auto);
+}
+
+.btn-left,
+.btn-right {
+    grid-row: 4 / 5;
+    grid-column: 1 / 2;
+}
+
+.color-boxes {
+    z-index: 100;
+    display: none;
+}
+
+/* .color-boxes-left,
+.color-boxes-right {
+    z-index: 100;
+    grid-row: 1 / 5;
+    grid-column: 1 / 2;
+} */
+
+.carousel {
+    grid-row: 5 / 6;
+    grid-column: 1 / 2;
     z-index: 500;
 }
 
-.carousel {
-    grid-row: 4 / 6;
-    grid-column: 1 / 2;
-}
 /* .section-title-left, 
 .section-title-right {
     grid-row: 1 / 2;
@@ -202,6 +228,7 @@ p, button {
 /*! CAROUSEL                       */
 /*! ------------------------------ */
 .carousel {
+    /* border: 2px solid black; */
     width: 100%;
     height: auto;
     display: grid;
@@ -216,14 +243,14 @@ p, button {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 1em;   
+    /* padding: 1em; */  
 }
 
 /** Photo container */
 .photo-container {
     width: 100%;
-    height: auto;
-    object-fit: cover;
+    height: 400px;
+    
 }
 
 /** Photo */
@@ -231,15 +258,34 @@ p, button {
     width: 100%;
     height: 400px;
     display: block;
+    object-fit: cover;
 }
 
+/** Nav */
 .carousel-nav {
     grid-area: photos-nav;
-    background-color: red;
+    background-color: transparent;
     width: 100%;
 }
 
+.carousel-nav__list {
+    display: flex;
+    flex-direction: row; 
+    justify-content: center;
+    column-gap: 1em;
+    position: relative;
+    /* margin: 1em 0; */
+}
 
+.carousel-nav__list > li {
+    width: 20px;
+    height: 20px;
+    background-color: hsla(var(--clr-gray-500), 0.7);
+    border-radius: 50%;
+    /* position: absolute;
+    top: 0;
+    left: 0; */
+}
 
 .btn-up {
     grid-area: btn-up;
@@ -248,6 +294,8 @@ p, button {
 .btn-down {
     grid-area: btn-down;
 }
+
+
 
 
 
@@ -270,12 +318,6 @@ p, button {
     top: 0;
     right: 0;
 } */
-
-
-
-
-
-
 /*! ------------------------------ */
 /*! SECTIONAL ELEMENTS             */
 /*! ------------------------------ */
@@ -294,7 +336,7 @@ p, button {
 }
 
 #africa-color-box-1 {
-    background-color: hsl(var(--clr-base-light));
+    background-color: hsl(var(--clr-base-bright));
     z-index: 200;
 }
 
@@ -310,32 +352,45 @@ p, button {
 
 
 
-
-/*! ------------------------------ */
-/*! HOVER STATES                   */
-/*! ------------------------------ */
-@media screen and (hover) {
-    .btn:hover {
-        cursor: pointer;
-    }
-}
-
-
-
 /*! ------------------------------ */
 /*! MEDIA QUERIES                  */
 /*! ------------------------------ */
-@media screen and (min-width: 650px) {
+@media screen and (min-width: 750px) {
     /** GRID */
     .grid-section {
         display: grid;
         grid-template-columns: repeat(8, 1fr);
-        grid-template-rows: repeat(5, 1fr);
+        grid-template-rows: repeat(5, auto);
     }
 
-    .info-text {
+    .info-text-left {
         grid-row: 1 / 5;
+        grid-column: 1 / 4;
+    }
+
+    .info-text-right {
+        grid-row: 1 / 3;
+        grid-column: 6 / 9;
+    }
+
+    .btn-left {
+        grid-row: 5 / 6;
+        grid-column: 1 / 4;
+    }
+
+    .btn-right {
+        grid-row: 5 / 6;
+        grid-column: 6 / 9;
+    }
+
+    .carousel-left {
+        grid-row: 1 / 6;
         grid-column: 1 / 6;
+    }
+
+    .carousel-right {
+        grid-row: 1 / 6;
+        grid-column: 4 / 9;
     }
 
     /* .section-title-left {
@@ -362,14 +417,9 @@ p, button {
         grid-row: 5 / 6;
         grid-column: 5 / 8;
     } */
-
-   
-    
-
-    
 }
 
-@media screen and (min-width: 900px) {
+@media screen and (min-width: 1000px) {
     /** GRID */
     .grid-section {
         display: grid;
@@ -378,12 +428,19 @@ p, button {
     }
 
     .info-text {
-        grid-row: 1 / 6;
-        grid-column: 1 / 6;
         display: grid;
         grid-template-rows: repeat(5, var(--grid-height-section, 15vh));
         grid-template-columns: 1fr;
+    }
 
+    .info-text-left {
+        grid-row: 1 / 6;
+        grid-column: 1 / 7;
+    }
+
+    .info-text-right {
+        grid-row: 1 / 6;
+        grid-column: 11 / 17;
     }
 
     .section-title-left {
@@ -396,11 +453,6 @@ p, button {
         grid-column: 1 / 2;
     }
 
-    .btn {
-        grid-row: 5 / 6;
-        grid-column: 1 / 2;
-    }
-
     .color-boxes {
         grid-row: 1 / 7;
         grid-column: 4 / 17;
@@ -409,9 +461,14 @@ p, button {
         grid-template-columns: repeat(10, 1fr);        
     }
 
-    .carousel {
+    .carousel-left {
         grid-row: 2 / 6;
-        grid-column: 7 / 16;
+        grid-column: 1 / 11;
+    }
+
+    .carousel-right {
+        grid-row: 2 / 6;
+        grid-column: 7 / 17;
     }
 
     #africa-color-box-1 {
@@ -481,4 +538,14 @@ p, button {
         grid-row: ;
         grid-column: ; 
     } */
+}
+
+
+
+
+/*! ------------------------------ */
+/*! HOVER STATES                   */
+/*! ------------------------------ */
+@media screen and (hover) {
+    
 }
