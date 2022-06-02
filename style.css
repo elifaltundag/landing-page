@@ -152,11 +152,10 @@ button {
     grid-template-rows: repeat(5, auto);
 }
 
-.info-text {
+.info {
     display: grid;
     grid-template-rows: repeat(3,auto);
     z-index: 700;
-    background-color: transparent;
     /* border: 2px solid blue; */
 }
 
@@ -342,19 +341,33 @@ button {
         column-gap: 5%;
     }
 
-    /* .info-text {
+    .info {
         display: grid;
-        grid-template-rows: repeat(5, var(--grid-height-section, 15vh));
         grid-template-columns: 1fr;
-    } */
+        grid-template-rows: repeat(4, var(--grid-height-section, 15vh));
+        grid-template-areas: 
+            "section-title"
+            "section-par"
+            "section-par"
+            "section-par"
+            "section-par";
+    }
+
+    .section-title {
+        grid-area: section-title;
+    }
+
+    .section-par {
+        grid-area: section-par;
+    }
 
     .info-text-left {
-        grid-row: 1 / 6;
+        grid-row: 1 / 5;
         grid-column: 1 / 7;
     }
 
     .info-text-right {
-        grid-row: 1 / 6;
+        grid-row: 1 / 5;
         grid-column: 11 / 17;
     }
 
@@ -370,10 +383,7 @@ button {
 
     .color-boxes {
         grid-row: 1 / 7;
-        grid-column: 4 / 17;
-        display: grid;
-        grid-template-rows: repeat(10, 1fr);
-        grid-template-columns: repeat(10, 1fr);        
+        grid-column: 4 / 17;       
     }
 
     .carousel-left {
@@ -384,21 +394,6 @@ button {
     .carousel-right {
         grid-row: 2 / 6;
         grid-column: 7 / 17;
-    }
-
-    #africa-color-box-1 {
-        grid-row: 2 / 8;
-        grid-column: 1 / 4;
-    }
-    
-    #africa-color-box-2 {
-        grid-row: 1 / 11;
-        grid-column: 3 / 6;
-    }
-    
-    #africa-color-box-3 {
-        grid-row: 4 / 10;
-        grid-column: 5 / 11;
     }
 }
 
