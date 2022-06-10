@@ -44,7 +44,6 @@ body {
     line-height: 1.5;
     min-height: 100vh;
     font-family: var(--ff-sans-srf);
-    
 }
 
 
@@ -59,6 +58,7 @@ h1 {
     font-size: clamp(2rem, 1rem + 3vw, 5rem);
     font-weight: 400;
 }
+
 
 p {
     font-size: clamp(1rem, 0.5rem + 1vw, 1.3rem);
@@ -92,9 +92,7 @@ p {
     margin: 0 auto;
 }
 
-.text-align__right {
-    text-align: right;
-}
+
 
 
 
@@ -102,11 +100,26 @@ p {
 /*! -------------------- */
 /*! SECTIONAL CLASSES    */
 /*! -------------------- */
+/** Navbar */
 .nav-list {
     display: flex;
     flex-direction: column;
 }
 
+/** Main sections */
+.main-section {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.main-section__title {
+    text-align: center;
+}
+
+
+
+/** Pricing cards */
 .pricing__container {
     margin: 0 auto;
     display: grid;
@@ -126,9 +139,12 @@ p {
 
 
 
+
+
 /*! -------------------- */
 /*! SECTIONAL ELEMENTS   */
 /*! -------------------- */
+/** Header */
 #header {
     background-image: linear-gradient(120deg, hsl(202, 70%, 35%) 15%, hsl(236, 70%, 35%) 50%, hsl(268, 70%, 35%) 85%);
     position: sticky;
@@ -141,6 +157,7 @@ p {
     */
 }
 
+/** Navigation */
 #nav-bar {
     background-color: transparent;
     display: flex;
@@ -149,6 +166,7 @@ p {
     /* display: none; */
 }
 
+/** Hero */
 #hero {
     /* border: 2px solid red; */
 
@@ -162,9 +180,13 @@ p {
     text-align: center;
 }
 
-
 #video {
     background-color: blueviolet;
+}
+
+/** Membership */
+#membership-table {
+    margin: 0 auto;
 }
 
 
