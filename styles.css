@@ -8,7 +8,7 @@
 
     /* Colors */
     --clr-dark: 0, 0%, 7%;
-    --clr-base: 0, 0%, 35%;
+    --clr-base: 0, 0%, 30%;
     --clr-accent: 0, 0%, 65%;
     --clr-light: 0, 0%, 93%; 
 
@@ -44,9 +44,26 @@ body {
     line-height: 1.5;
     min-height: 100vh;
     font-family: var(--ff-sans-srf);
+    padding-bottom: 2em;
 }
 
+fieldset {
+    border: none;
+}
 
+input, textarea {
+    background-color: hsl(var(--clr-light), 0.2);
+    color: hsl(var(--clr-light));
+    flex-grow: 3;
+    border: none;
+    padding: 0.5em;
+    border-radius: 5px;
+}
+
+::placeholder {
+    color: hsla(var(--clr-light), 0.8);
+    font-family: var(--ff-sans-srf)
+}
 
 
 /*! -------------------- */
@@ -59,9 +76,17 @@ h1 {
     font-weight: 400;
 }
 
-
-p {
+p, label, input, textarea {
     font-size: clamp(1rem, 0.5rem + 1vw, 1.3rem);
+}
+
+legend {
+    font-size: clamp(1.1rem, 0.6rem + 1.1vw, 1.4rem);
+    font-weight: 700;
+}
+
+td {
+    font-size: clamp(1.2rem, 0.6rem + 1.2vw, 1.5rem);
 }
 
 #hero__descr {
@@ -137,12 +162,18 @@ p {
 .pricing-card {
     display: flex;
     flex-direction: column;
-    background-color: cadetblue;
+    color: hsl(var(--clr-light));
     border-radius: 20px;
     padding: 0.5em;
     border: 2px solid black;
 }
 
+/** Contact form */
+.contact-form__input {
+    display: flex;
+    flex-direction: column;
+    margin: 0.5em 0;
+}
 
 
 
@@ -152,15 +183,16 @@ p {
 /*! -------------------- */
 /** Header */
 #header {
-    background-image: linear-gradient(120deg, hsl(202, 70%, 35%) 15%, hsl(236, 70%, 35%) 50%, hsl(268, 70%, 35%) 85%);
+    background-image: linear-gradient(120deg, hsl(202, 40%, 30%) 15%, hsl(236, 40%, 30%) 50%, hsl(268, 40%, 30%) 85%);
     position: sticky;
     top: 0;
     padding: 2rem 0;
     /*
-    hsl(202, 69%, 35%);
-    hsl(249, 69%, 35%);
-    hsl(236, 69%, 35%);
+    hsl(202, 69%, 30%);
+    hsl(249, 69%, 30%);
+    hsl(236, 69%, 30%);
     */
+    z-index: 5;
 }
 
 /** Navigation */
@@ -188,12 +220,37 @@ p {
 
 #video {
     background-color: blueviolet;
+    z-index: 0;
 }
 
 /** Membership */
 #membership-table {
     margin: 0 auto;
 }
+
+#monthly {
+    background-color: hsl(202, 40%, 30%);
+}
+
+#biannually {
+    background-color: hsl(236, 40%, 30%);
+}
+
+#annually {
+    background-color: hsl(268, 40%, 30%);
+}
+
+/** Contact form */
+#contact-form {
+    width: min(95%, 900px);
+    margin: 0 auto;
+    background-image: linear-gradient(120deg, hsl(202, 40%, 30%) 15%, hsl(236, 40%, 30%) 50%, hsl(268, 40%, 30%) 85%);
+    color: hsl(var(--clr-light));
+    padding: 1em;
+    border-radius: 20px;
+}
+
+
 
 
 /*! -------------------- */
@@ -207,6 +264,19 @@ p {
         grid-template-rows: unset;
         column-gap: 4vw;
     }
+
+    .contact-form__input {
+        flex-direction: row;
+    }
+
+    .contact-form__input > label {
+        width: 8ch;
+    }
+
+    .contact-form__input > input {
+        position: relative;
+    }
+
 }
 
 @media screen and (min-width: 750px) {

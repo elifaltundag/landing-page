@@ -39,7 +39,7 @@
                 <p id="hero__descr">Sentence explaining why this is the most innovative and user friendly meditation app</p>
             </div>
             <div class="video-container">
-                <video id="video" src="" autoplay muted loop>
+                <video id="video" src="" autoplay muted loop controls>
                     Video not supported
                 </video>
             </div>
@@ -92,7 +92,7 @@
                             </tr>
                             <tr>
                                 <td>Customization</td>
-                                <td>No</td>
+                                <td>Yes</td>
                                 <td>Yes</td>
                             </tr>
                             <tr>
@@ -105,7 +105,7 @@
                     </table>
                 </div>
                 <div class="pricing__container">
-                    <div class="pricing-card">
+                    <div id="monthly" class="pricing-card">
                         <div class="pricing-info">
                             <h3 class="pricing-card__membership">Monthly&ast;</h3>
                             <p class="pricing-card__price">9.99&dollar;</p>
@@ -116,7 +116,7 @@
                         </ul>
                     </div>
 
-                    <div class="pricing-card">
+                    <div id="biannually" class="pricing-card">
                         <div class="pricing-info">
                             <h3 class="pricing-card__membership">Biannually&ast;</h3>
                             <p class="pricing-card__price">8.49&dollar;</p>
@@ -127,7 +127,7 @@
                         </ul>
                     </div>
 
-                    <div class="pricing-card">
+                    <div id="annually" class="pricing-card">
                         <div class="pricing-info">
                             <h3 class="pricing-card__membership">Annually&ast;</h3>
                             <p class="pricing-card__price">5.99&dollar;</p>
@@ -150,14 +150,14 @@
                 <fieldset>
                     <legend>Contact information</legend>
                     <ul>
-                        <li>
-                            <label for="name" id="name-label">Name &colon;</label>
+                        <li class="contact-form__input">
+                            <label for="name" id="name-label">Name</label>
                             <input type="text" id="name" placeholder="Your first name">
                         </li>
                         
                         
-                        <li>
-                            <label for="email" id="email-label">Email &colon;</label>
+                        <li class="contact-form__input">
+                            <label for="email" id="email-label">Email</label>
                             <input type="email" id="email" placeholder="name@xxx.com">
                         </li>
                     </ul>
@@ -167,14 +167,14 @@
                 <fieldset>
                     <legend>Message</legend>
                     <ul>
-                        <li>
-                            <label for="subject" id="subject-label">Subject &colon;</label>
+                        <li class="contact-form__input">
+                            <label for="subject" id="subject-label">Subject</label>
                             <input type="text" id="subject" placeholder="A few words summarizing your message">
                         </li>
 
 
-                        <li>
-                            <label for="message" id="message-label">Message &colon;</label>
+                        <li class="contact-form__input">
+                            <label for="message" id="message-label">Message</label>
                             <textarea name="message" id="message" cols="" rows="" placeholder="Type your message..."></textarea>
                         </li>
                     </ul>
@@ -183,11 +183,6 @@
             </form>
             
         </section>
-    </main>
-
-    <footer>
-
-    </footer>
-    
+    </main>    
 </body>
 </html>
