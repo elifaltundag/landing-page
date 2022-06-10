@@ -57,6 +57,7 @@ h1 {
     font-family: var(--ff-sans-srf);
     min-width: 8ch;
     font-size: clamp(2rem, 1rem + 3vw, 5rem);
+    font-weight: 400;
 }
 
 p {
@@ -129,7 +130,7 @@ p {
 /*! SECTIONAL ELEMENTS   */
 /*! -------------------- */
 #header {
-    background-image: linear-gradient(120deg, hsl(202, 70%, 35%) 0%, hsl(236, 70%, 35%) 50%, hsl(268, 70%, 35%) 100%);
+    background-image: linear-gradient(120deg, hsl(202, 70%, 35%) 15%, hsl(236, 70%, 35%) 50%, hsl(268, 70%, 35%) 85%);
     position: sticky;
     top: 0;
     padding: 2rem 0;
