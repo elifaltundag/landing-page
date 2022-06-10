@@ -8,7 +8,7 @@ It is part of the Responsive Web Design Certification projects of freeCodeCamp, 
 
 ### 
 
-### Objectives
+### Objectives: Agile Principles
 * Don't overthink or get lost in the details
 * Finish the project as soon as possible
 
