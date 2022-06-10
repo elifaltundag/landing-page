@@ -115,9 +115,15 @@ p {
 
 .main-section__title {
     text-align: center;
+    width: 100%;
+    display: block;
 }
 
-
+/** Membership */
+.membership-info {
+    display: flex;
+    flex-direction: column;
+}
 
 /** Pricing cards */
 .pricing__container {
@@ -226,5 +232,12 @@ p {
         text-align: left;
     }
     
+}
+
+@media screen and (min-width: 1600px) {
+    .membership-info {
+        display: flex;
+        flex-direction: row;
+    }
 }
 
