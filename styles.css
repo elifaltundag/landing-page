@@ -1,0 +1,207 @@
+/*! -------------------- */
+/*! CUSTOM PROPERTIES -- */
+/*! -------------------- */
+
+:root {
+    --ff-srf: "Playfair Display", serif;
+    --ff-sans-srf: "Jost", sans-serif;
+
+    /* Colors */
+    --clr-dark: 0, 0%, 7%;
+    --clr-base: 0, 0%, 35%;
+    --clr-accent: 0, 0%, 65%;
+    --clr-light: 0, 0%, 93%; 
+
+}
+
+/*! -------------------- */
+/*! RESET CSS ---------- */
+/*! -------------------- */
+/* https://piccalil.li/blog/a-modern-css-reset/ */
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* Box sizing, margins and paddings */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+ul, li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+body {
+    overflow-x: hidden; /* Wasn't added by Kevin. https://piccalil.li/tutorial/creating-a-full-bleed-css-utility/ */ 
+    line-height: 1.5;
+    min-height: 100vh;
+    font-family: var(--ff-sans-srf);
+    
+}
+
+
+
+
+/*! -------------------- */
+/*! TYPOGRAPHY           */
+/*! -------------------- */
+h1 {
+    font-family: var(--ff-sans-srf);
+    min-width: 8ch;
+    font-size: clamp(2rem, 1rem + 3vw, 5rem);
+}
+
+p {
+    font-size: clamp(1rem, 0.5rem + 1vw, 1.3rem);
+}
+
+#hero__descr {
+    font-size: clamp(1.2rem, 0.8rem + 1vw, 1.7rem);
+    max-width: 40ch;
+}
+
+.pricing-card__membership {
+    font-size: clamp(1.3rem, 0.8rem + 2vw, 2rem);
+}
+
+.pricing-card__price {
+    font-size: clamp(1.8rem, 0.8rem + 3vw, 3rem);
+}
+
+.pricing-card__per-month {
+    font-size: 2rem;
+}
+
+
+
+
+/*! -------------------- */
+/*! UTILITY CLASSES      */
+/*! -------------------- */
+.container {
+    width: min(90%, 1200px);
+    margin: 0 auto;
+}
+
+.text-align__right {
+    text-align: right;
+}
+
+
+
+
+/*! -------------------- */
+/*! SECTIONAL CLASSES    */
+/*! -------------------- */
+.nav-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.pricing__container {
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 60vw;
+    grid-template-rows: repeat(3, 1fr);
+    row-gap: 4vw;
+}
+
+.pricing-card {
+    display: flex;
+    flex-direction: column;
+    background-color: cadetblue;
+    border-radius: 20px;
+    padding: 0.5em;
+    border: 2px solid black;
+}
+
+
+
+/*! -------------------- */
+/*! SECTIONAL ELEMENTS   */
+/*! -------------------- */
+#header {
+    background-image: linear-gradient(120deg, hsl(202, 70%, 35%) 0%, hsl(236, 70%, 35%) 50%, hsl(268, 70%, 35%) 100%);
+    position: sticky;
+    top: 0;
+    padding: 2rem 0;
+    /*
+    hsl(202, 69%, 35%);
+    hsl(249, 69%, 35%);
+    hsl(236, 69%, 35%);
+    */
+}
+
+#nav-bar {
+    background-color: transparent;
+    display: flex;
+    flex-direction: column;
+    color: hsl(0, 0%, 95%);
+    /* display: none; */
+}
+
+#hero {
+    /* border: 2px solid red; */
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 4em;
+
+    margin-top: 3em;
+    padding: 2em 1em;
+    text-align: center;
+}
+
+
+#video {
+    background-color: blueviolet;
+}
+
+
+/*! -------------------- */
+/*! MEDIA QUERIES        */
+/*! -------------------- */
+@media screen and (min-width: 500px) {
+    .pricing__container {
+        width: 90%;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: unset;
+        column-gap: 4vw;
+    }
+}
+
+@media screen and (min-width: 750px) {
+    .nav-list {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        /* border: 2px solid red; */
+        column-gap: 4em;
+    }
+
+    #nav-bar {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    #hero {
+        flex-direction: row;
+        justify-content: space-between;
+        margin: 5em auto;
+        padding: 3em 0;
+        column-gap: 10vw;
+        text-align: left;
+    }
+    
+}
+
