@@ -266,11 +266,11 @@ tbody tr {
 .pricing-card {
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     color: hsl(var(--clr-light));
     border-radius: 20px;
     padding: 2.5em 1em;
     text-align: center;
-    row-gap: 0.5em;
 }
 
 .pricing-card__details {
@@ -354,7 +354,7 @@ tbody tr {
 
 #hamburger-top[state="arrow"] {
     transform: scaleX(0.5) translateX(-50%) translateY(5px) rotate(-20deg);
-    transition: transform 400ms cubic-bezier(.46,-0.95,.67,.94);
+    transition: transform 400ms ease;
 }
 
 #hamburger-bottom[state="hamburger"] {
@@ -364,9 +364,10 @@ tbody tr {
 
 #hamburger-bottom[state="arrow"] {
     transform: scaleX(0.5) translateX(-50%) translateY(-5px) rotate(20deg);
-    transition: transform 400ms cubic-bezier(.46,-0.95,.67,.94);
+    transition: transform 400ms ease;
 }
 
+/* cubic-bezier(.46,-0.95,.67,.94) */
 
 /*! -------------------- */
 /*! SECTIONAL ELEMENTS   */
@@ -477,10 +478,6 @@ a:active {
     .pricing__container h3 {
         grid-column: 1 / 4;
     }
- 
-    .pricing-card {
-        row-gap: 1em;
-    }
 
     .form__data {
         flex-direction: row;
@@ -548,7 +545,11 @@ a:active {
     
 }
 
-@media screen and (min-width: 1400px) {
+@media screen and (min-width: 1600px) {
+    .container {
+        width: min(100%, 1500px);
+    }
+
     .main {
         row-gap: 10em;
     }
