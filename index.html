@@ -134,17 +134,17 @@
         
         <section id="contact" class="main-section container">
             <h2 class="main-section__title">Contact Us</h2>
-            <form action="" id="contact-form">
+            <form action="https://www.freecodecamp.com/email-submit" id="contact-form" method="POST">
                 <fieldset>
                     <legend>Contact information</legend>
                     <ul>
-                        <li class="contact-form__input">
+                        <li class="contact-form__data">
                             <label for="name" id="name-label">Name</label>
                             <input type="text" id="name" placeholder="Your first name">
                         </li>
                         
                         
-                        <li class="contact-form__input">
+                        <li class="contact-form__data">
                             <label for="email" id="email-label">Email</label>
                             <input type="email" id="email" placeholder="name@xxx.com">
                         </li>
@@ -155,18 +155,20 @@
                 <fieldset>
                     <legend>Message</legend>
                     <ul>
-                        <li class="contact-form__input">
+                        <li class="contact-form__data">
                             <label for="subject" id="subject-label">Subject</label>
                             <input type="text" id="subject" placeholder="A few words summarizing your message">
                         </li>
 
 
-                        <li class="contact-form__input">
+                        <li class="contact-form__data">
                             <label for="message" id="message-label">Message</label>
-                            <textarea name="message" id="message" cols="" rows="" placeholder="Type your message..."></textarea>
+                            <textarea name="message" id="message" rows="5" placeholder="Type your message..."></textarea>
                         </li>
                     </ul>
                 </fieldset>
+
+                <input type="submit" id="submit" value="Send Message">
 
             </form>
             
