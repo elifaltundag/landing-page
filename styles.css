@@ -264,9 +264,17 @@ tbody tr {
     text-align: center;
 }
 
+/** Video */
+#video-container {
+    width: 100%;
+    display: flex;
+    align-items: stretch;
+}
+
 #video {
     background-color: red;
     z-index: 0;
+    width: 100%;
 }
 
 /** Membership */
@@ -352,6 +360,10 @@ tbody tr {
         row-gap: 6em;
     }
 
+    #video-container {
+        width: 60%;
+    }
+
     .nav-list {
         display: flex;
         flex-direction: row;
@@ -370,7 +382,7 @@ tbody tr {
         justify-content: space-between;
         margin: 5em auto 0;
         padding: 3em 0;
-        column-gap: 10vw;
+        column-gap: 5vw;
         text-align: left;
     }
 
