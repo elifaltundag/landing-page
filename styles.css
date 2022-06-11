@@ -142,6 +142,15 @@ td {
     font-weight: 600;
 }
 
+.testimonial__person,
+.testimonial__occupation {
+    font-size: clamp(1.2rem, 0.8rem + 1vw, 1.7rem);
+}
+
+.testimonial__person {
+    font-weight: 600;
+}
+
 
 
 
@@ -284,6 +293,32 @@ tbody tr {
 .pricing-card__details {
     margin-top: 2em;
     text-align: left;
+}
+
+/** Testimonials */
+.testimonials__container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(4, 1fr);
+    row-gap: 3em;
+}
+
+.testimonial {
+    display: flex;
+    flex-direction: column;
+    row-gap: 0.5em;
+    margin-bottom: 2em;
+}
+
+.testimonial__quote {
+    font-style: italic;
+    font-weight: 500;
+    letter-spacing: 0.2px;
+}
+
+.testimonial__person, 
+.testimonial__occupation {
+    text-align: center;
 }
 
 /** Contact form */
@@ -486,6 +521,13 @@ a:active {
 
     .pricing__container h3 {
         grid-column: 1 / 4;
+    }
+
+    .testimonials__container {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        row-gap: 1.6em;
+        column-gap: 3em;
     }
 
     .form__data {
