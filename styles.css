@@ -74,10 +74,20 @@ input, textarea {
 /*! TYPOGRAPHY           */
 /*! -------------------- */
 h1 {
-    font-family: var(--ff-sans-srf);
     min-width: 8ch;
     font-size: clamp(2rem, 1rem + 3vw, 5rem);
     font-weight: 400;
+}
+
+h2 {
+    font-size: clamp(1.8rem, 0.8rem + 3vw, 3rem);
+    font-weight: 600;
+}
+
+h3 {
+    font-size: clamp(1.5rem, 0.6rem + 2.6vw, 2.2rem);
+    font-weight: 600;
+    text-align: center;
 }
 
 p, label, input, textarea {
@@ -85,13 +95,13 @@ p, label, input, textarea {
     font-family: var(--ff-sans-srf);
 }
 
-legend {
-    font-size: clamp(1.1rem, 0.6rem + 1.1vw, 1.4rem);
-    font-weight: 700;
+thead {
+    font-size: clamp(1.3rem, 0.6rem + 1.1vw, 1.7rem);
+    font-weight: 600;
 }
 
 td {
-    font-size: clamp(1.2rem, 0.6rem + 1.2vw, 1.5rem);
+    font-size: clamp(1.1rem, 0.6rem + 1.2vw, 1.5rem);
 }
 
 #hero__descr {
@@ -159,6 +169,25 @@ td {
     display: flex;
     flex-direction: column;
     align-items: center;
+    row-gap: 3em;
+}
+
+/** Table - membership */
+table, tr, td, thead, tbody {
+    border-collapse: collapse;
+}
+
+td {
+    padding: 0.2em 0;
+}
+
+tbody tr {
+    border-top: 2px solid hsla(var(--clr-dark), 0.2);
+}
+
+.align-right {
+    text-align: right;
+    padding-left: 1em;
 }
 
 /** Pricing cards */
@@ -166,8 +195,8 @@ td {
     margin: 0 auto;
     display: grid;
     grid-template-columns: 60vw;
-    grid-template-rows: repeat(3, 1fr);
-    row-gap: 4vw;
+    grid-template-rows: auto repeat(3, 1fr);
+    row-gap: 0.6em;
 }
 
 .pricing-card {
@@ -289,8 +318,12 @@ td {
         margin: 0 auto;
         display: grid;
         grid-template-columns: repeat(3, 1fr);
-        grid-template-rows: unset;
+        grid-template-rows: repeat(2, auto);
         column-gap: 2vw;
+    }
+
+    .pricing__container h3 {
+        grid-column: 1 / 4;
     }
  
     .pricing-card {
@@ -337,15 +370,17 @@ td {
 
     .pricing__container {
         width: min(100%, 900px);
-        grid-template-columns: repeat(3, 1fr);
+        row-gap: 1em;
     }
     
 }
 
-@media screen and (min-width: 1600px) {
+@media screen and (min-width: 1400px) {
     .membership-info {
         display: flex;
         flex-direction: row;
+        column-gap: 5vw;
+        align-items: flex-start;
     }
 }
 
