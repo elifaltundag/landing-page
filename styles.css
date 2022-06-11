@@ -82,6 +82,7 @@ h1 {
 h2 {
     font-size: clamp(1.8rem, 0.8rem + 3vw, 3rem);
     font-weight: 600;
+    margin-bottom: 0.7em;
 }
 
 h3 {
@@ -137,6 +138,11 @@ td {
     margin: 0 auto;
 }
 
+.main {
+    display: flex;
+    flex-direction: column;
+    row-gap: 2em;
+}
 
 
 
@@ -244,13 +250,10 @@ tbody tr {
     display: flex;
     flex-direction: column;
     color: hsl(var(--clr-light));
-    display: none;
 }
 
 /** Hero */
 #hero {
-    /* border: 2px solid red; */
-
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -308,6 +311,10 @@ tbody tr {
 /*! MEDIA QUERIES        */
 /*! -------------------- */
 @media screen and (min-width: 550px) {
+    .main {
+        row-gap: 3em;
+    }
+
     .pricing__container {
         width: 100%;
         margin: 0 auto;
@@ -341,6 +348,10 @@ tbody tr {
 }
 
 @media screen and (min-width: 800px) {
+    .main {
+        row-gap: 6em;
+    }
+
     .nav-list {
         display: flex;
         flex-direction: row;
@@ -357,7 +368,7 @@ tbody tr {
     #hero {
         flex-direction: row;
         justify-content: space-between;
-        margin: 5em auto;
+        margin: 5em auto 0;
         padding: 3em 0;
         column-gap: 10vw;
         text-align: left;
@@ -371,6 +382,10 @@ tbody tr {
 }
 
 @media screen and (min-width: 1400px) {
+    .main {
+        row-gap: 10em;
+    }
+
     .membership-info {
         display: flex;
         flex-direction: row;
