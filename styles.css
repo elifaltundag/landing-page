@@ -107,6 +107,10 @@ p, label, input, textarea {
     font-family: var(--ff-sans-srf);
 }
 
+.nav-link {
+    font-size: clamp(1rem, 0.5rem + 1.5vw, 1.5rem);
+}
+
 thead {
     font-size: clamp(1.3rem, 0.6rem + 1.1vw, 1.7rem);
     font-weight: 600;
