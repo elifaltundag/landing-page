@@ -215,7 +215,7 @@ tbody tr {
 }
 
 /** Contact form */
-.contact-form__data {
+.form__data {
     display: flex;
     flex-direction: column;
     align-items: stretch;
@@ -234,11 +234,6 @@ tbody tr {
     position: sticky;
     top: 0;
     padding: 2rem 0;
-    /*
-    hsl(202, 69%, 30%);
-    hsl(249, 69%, 30%);
-    hsl(236, 69%, 30%);
-    */
     z-index: 5;
     border-bottom: 4px solid hsl(0, 0%, 95%);
 }
@@ -289,7 +284,7 @@ tbody tr {
 }
 
 /** Contact form */
-#contact-form {
+#form {
     width: min(100%, 900px);
     margin: 0 auto;
     background-image: linear-gradient(120deg, hsl(var(--clr-green)) 15%, hsl(var(--clr-blue)) 50%, hsl(var(--clr-purple)) 85%);
@@ -330,16 +325,16 @@ tbody tr {
         row-gap: 1em;
     }
 
-    .contact-form__data {
+    .form__data {
         flex-direction: row;
         align-items: center;
     }
 
-    .contact-form__data > label {
+    .form__data > label {
         width: 10ch;
     }
 
-    .contact-form__data > input {
+    .form__data > input {
         position: relative;
     }
 
