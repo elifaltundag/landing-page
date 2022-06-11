@@ -229,6 +229,10 @@ td {
 }
 
 /** Membership */
+.versions {
+    width: 100%;
+}
+
 .membership-info {
     display: flex;
     flex-direction: column;
@@ -423,6 +427,7 @@ a:active {
 /** Membership */
 #membership-table {
     margin: 0 auto;
+    width: min(100%, 600px);
 }
 
 #monthly {
@@ -536,6 +541,10 @@ a:active {
         padding: 3em 0;
         column-gap: 5vw;
         text-align: left;
+    }
+
+    .versions {
+        width: min(80%, 600px);
     }
 
     .pricing__container {
