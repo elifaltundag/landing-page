@@ -506,7 +506,6 @@ a:active {
     #nav-bar[state="open"], 
     #nav-bar[state="closed"] {
         transform: translateY(0);
-        
     }
    
     .main {
@@ -521,7 +520,6 @@ a:active {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
-        /* border: 2px solid red; */
         column-gap: 4em;
     }
 
