@@ -1,7 +1,6 @@
 /*! -------------------- */
 /*! CUSTOM PROPERTIES -- */
 /*! -------------------- */
-
 :root {
     /** Fonts */
     --ff-srf: "Playfair Display", serif;
@@ -18,18 +17,30 @@
 /*! -------------------- */
 /*! RESET CSS ---------- */
 /*! -------------------- */
-/* https://piccalil.li/blog/a-modern-css-reset/ */
-
 html {
     scroll-behavior: smooth;
+    scroll-padding-top: 6em;
 }
 
-/* Box sizing, margins and paddings */
+/** Box sizing, margins and paddings */
 *, *::before, *::after {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
+
+/** A11Y - screen reader only: only for assistive technologies which read the page out loud */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+} 
 
 ul, li {
     list-style: none;
@@ -41,7 +52,7 @@ a {
 }
 
 body {
-    overflow-x: hidden; /* Wasn't added by Kevin. https://piccalil.li/tutorial/creating-a-full-bleed-css-utility/ */ 
+    overflow-x: hidden; 
     line-height: 1.5;
     min-height: 100vh;
     font-family: var(--ff-sans-srf);
@@ -201,6 +212,7 @@ td {
 .nav-list {
     display: flex;
     flex-direction: column;
+    row-gap: 0.5em;
 }
 
 /** Main sections */
@@ -275,6 +287,85 @@ tbody tr {
 }
 
 
+/*! -------------------- */
+/*! NAVIGATION           */
+/*! -------------------- */
+/** Navigation */
+#nav-bar {
+    background-color: transparent;
+    display: flex;
+    flex-direction: column;
+    row-gap: 0.5em;
+    align-items: center;
+    text-align: center;
+    color: hsl(var(--clr-light));
+}
+
+#mobile-nav-menu {
+    position: fixed;
+    right: 0.5em;
+    top: 63%;
+    width: 100%;
+    z-index: 10;
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.btn-nav-toggle {
+    cursor: pointer;
+    background-color: transparent;
+    padding: 1em;
+    display: flex;
+    flex-direction: column;
+    row-gap: 8px;
+    
+    border: none;
+}
+
+#nav-bar[state="open"] {
+    transform: translateY(0);
+    transition: transform 600ms ease;
+}
+
+#nav-bar[state="closed"] {
+    transform: translateY(-140%);
+    transition: transform 600ms ease;
+}
+
+#hamburger-top[state="hamburger"],
+#hamburger-middle[state="hamburger"],
+#hamburger-bottom[state="hamburger"],
+#hamburger-top[state="arrow"],
+#hamburger-middle[state="arrow"],
+#hamburger-bottom[state="arrow"] {
+    display: inline-block;
+    background-color: hsl(var(--clr-light));
+    width: 5ch;
+    height: 3px;
+    border-radius: 2px;
+}
+
+#hamburger-top[state="hamburger"] {
+    transform: translateY(0);
+    transition: transform 400ms ease;
+}
+
+#hamburger-top[state="arrow"] {
+    transform: scaleX(0.5) translateX(-50%) translateY(5px) rotate(-20deg);
+    transition: transform 400ms cubic-bezier(.46,-0.95,.67,.94);
+}
+
+#hamburger-bottom[state="hamburger"] {
+    transform: translateY(0);
+    transition: transform 400ms ease;
+}
+
+#hamburger-bottom[state="arrow"] {
+    transform: scaleX(0.5) translateX(-50%) translateY(-5px) rotate(20deg);
+    transition: transform 400ms cubic-bezier(.46,-0.95,.67,.94);
+}
 
 
 /*! -------------------- */
@@ -288,14 +379,16 @@ tbody tr {
     padding: 2rem 0;
     z-index: 5;
     border-bottom: 4px solid hsl(0, 0%, 95%);
+
+    transition: transform 400ms ease;
 }
 
-/** Navigation */
-#nav-bar {
-    background-color: transparent;
-    display: flex;
-    flex-direction: column;
-    color: hsl(var(--clr-light));
+#header[state="closed"] {
+    transform: translateY(-60%);
+}
+
+#header[state="open"] {
+    transform: translateY(0);
 }
 
 a:active {
@@ -405,6 +498,11 @@ a:active {
 }
 
 @media screen and (min-width: 800px) {
+    #header[state="closed"],  
+    #header[state="open"] {
+        transform: translateY(0);
+    }
+   
     .main {
         row-gap: 6em;
     }
@@ -419,6 +517,10 @@ a:active {
         justify-content: space-between;
         /* border: 2px solid red; */
         column-gap: 4em;
+    }
+
+    #mobile-nav-menu {
+        display: none;
     }
 
     #nav-bar {
