@@ -7,8 +7,8 @@
     --ff-sans-srf: "Jost", sans-serif;
 
     /** Colors */
-    --clr-dark: 0, 0%, 7%;
-    --clr-light: 0, 0%, 93%;
+    --clr-dark: 0, 0%, 20%;
+    --clr-light: 0, 0%, 80%;
     --clr-green: 202, 40%, 30%;
     --clr-blue: 236, 40%, 30%;
     --clr-purple: 268, 40%, 30%; 
@@ -316,9 +316,24 @@ tbody tr {
     letter-spacing: 0.2px;
 }
 
+.testimonial__quote::before, 
+.testimonial__quote::after {
+    font-size: 1.5em;
+    color: hsl(var(--clr-dark), 0.8);
+}
+
+.testimonial__quote::before {
+    content: open-quote; 
+}
+
+.testimonial__quote::after {
+    content: close-quote;
+}
+
 .testimonial__person, 
 .testimonial__occupation {
     text-align: center;
+    color: hsl(var(--clr-dark), 0.8);
 }
 
 /** Contact form */
@@ -422,7 +437,7 @@ tbody tr {
     top: 0;
     padding: 2rem 0;
     z-index: 5;
-    border-bottom: 4px solid hsl(0, 0%, 95%);
+    border-bottom: 4px solid hsl(var(--clr-light));
 
     transition: transform 400ms ease;
 }
