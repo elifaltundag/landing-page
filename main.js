@@ -48,7 +48,7 @@ document.addEventListener("click", (e) => {
 
     if (navMenuIds.every(idName => idName !== e.target.id)) { 
         navBar.setAttribute("state", "closed");
-        header.setAttribute("state", "closed")
+        header.setAttribute("state", "closed");
 
         const hambButtons = [hambTop, hambMid, hambBtm];
         hambButtons.forEach(button => {
