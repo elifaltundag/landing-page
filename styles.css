@@ -491,7 +491,7 @@ a:active {
 #video-container {
     width: 100%;
     display: flex;
-    align-items: flex-end;
+    justify-content: flex-end;
 }
 
 #video {
