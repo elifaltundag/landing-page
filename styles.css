@@ -88,18 +88,21 @@ h1 {
     min-width: 8ch;
     font-size: clamp(2rem, 1rem + 3vw, 5rem);
     font-weight: 400;
+    font-family: var(--ff-srf);
 }
 
 h2 {
     font-size: clamp(1.8rem, 0.8rem + 3vw, 3rem);
     font-weight: 600;
     margin-bottom: 0.7em;
+    font-family: var(--ff-srf);
 }
 
 h3 {
     font-size: clamp(1.5rem, 0.6rem + 2.6vw, 2.2rem);
     font-weight: 600;
     text-align: center;
+    font-family: var(--ff-srf);
 }
 
 p, label, input, textarea {
@@ -364,8 +367,8 @@ tbody tr {
 
 #mobile-nav-menu {
     position: fixed;
-    right: 0.5em;
-    top: 0.5em;
+    right: 0.8em;
+    top: 0.8em;
     width: 100%;
     z-index: 10;
 
@@ -444,6 +447,11 @@ tbody tr {
     border-bottom: 4px solid hsl(var(--clr-light));
 
     transition: transform 400ms ease;
+}
+
+#header-img {
+    object-fit: contain;
+    max-height: 50px;
 }
 
 #header[state="closed"] {

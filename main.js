@@ -6,6 +6,7 @@ const hambMid = document.querySelector("#hamburger-middle");
 const hambBtm = document.querySelector("#hamburger-bottom");
 const header = document.querySelector("#header");
 
+
 hamburger.addEventListener("click", () => {
     // Check navBar visibility
     const navBarOpen = navBar.getAttribute("state");
@@ -42,9 +43,27 @@ hamburger.addEventListener("click", () => {
 
 
 document.addEventListener("click", (e) => {
-    if (!e.target.id) { // Works but not a really good solution
+    const navMenuIds = ["mobile-nav-menu", "btn-hamburger", "hamburger-top", "hamburger-middle", "hamburger-bottom",  "header", "nav-bar"];
+
+
+    if (navMenuIds.every(idName => idName !== e.target.id)) { 
         navBar.setAttribute("state", "closed");
         header.setAttribute("state", "closed")
+
+        const hambButtons = [hambTop, hambMid, hambBtm];
+        hambButtons.forEach(button => {
+            // Get the states of the hamburger button
+            let btnState = button.getAttribute("state");
+
+            // If it is hamburger, change it to arrow
+            if (btnState === "hamburger") {
+                button.setAttribute("state", "arrow");
+            
+            // If it is arrow, change it to hamburger
+            } else if (btnState === "arrow") {
+                button.setAttribute("state", "hamburger");
+            }
+        });
     }
-})
+});
 
