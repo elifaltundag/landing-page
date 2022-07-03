@@ -494,9 +494,10 @@ a:active {
     justify-content: flex-end;
 }
 
-#video {
+iframe {
     z-index: 0;
-    width: 100%;
+    width: 560px;
+    height: 315px;
 }
 
 /** Membership */
