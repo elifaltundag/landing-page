@@ -108,7 +108,7 @@ p, label, input, textarea {
 }
 
 .nav-link {
-    font-size: clamp(1rem, 0.5rem + 1.5vw, 1.5rem);
+    font-size: clamp(1rem, 0.5rem + 1.5vw, 1.3rem);
 }
 
 thead {
@@ -142,9 +142,12 @@ td {
     font-weight: 600;
 }
 
-.testimonial__person,
+.testimonial__person {
+    font-size: clamp(1.3rem, 0.8rem + 1.1vw, 1.8rem);
+}
+
 .testimonial__occupation {
-    font-size: clamp(1.2rem, 0.8rem + 1vw, 1.7rem);
+    font-size: clamp(1.2rem, 0.8rem + 1vw, 1.6rem);
 }
 
 .testimonial__person {
@@ -165,7 +168,7 @@ td {
 .main {
     display: flex;
     flex-direction: column;
-    row-gap: 2em;
+    row-gap: 7em;
 }
 
 .btn {
@@ -362,7 +365,7 @@ tbody tr {
 #mobile-nav-menu {
     position: fixed;
     right: 0.5em;
-    top: 63%;
+    top: 0.5em;
     width: 100%;
     z-index: 10;
 
@@ -433,7 +436,8 @@ tbody tr {
 /** Header */
 #header {
     background-image: linear-gradient(120deg, hsl(var(--clr-green)) 15%, hsl(var(--clr-blue)) 50%, hsl(var(--clr-purple)) 85%);
-    position: sticky;
+    position: fixed;
+    width: 100%;
     top: 0;
     padding: 2rem 0;
     z-index: 5;
@@ -443,7 +447,7 @@ tbody tr {
 }
 
 #header[state="closed"] {
-    transform: translateY(-60%);
+    transform: translateY(-65%);
 }
 
 #header[state="open"] {
@@ -461,7 +465,7 @@ a:active {
     align-items: center;
     row-gap: 4em;
 
-    margin-top: 3em;
+    margin-top: 7em;
     padding: 2em 1em;
     text-align: center;
 }
@@ -522,7 +526,7 @@ a:active {
 /*! -------------------- */
 @media screen and (min-width: 550px) {
     .main {
-        row-gap: 3em;
+        row-gap: 7.5em;
     }
 
     .pricing__container {
@@ -561,6 +565,10 @@ a:active {
 }
 
 @media screen and (min-width: 800px) {
+    #header {
+        padding: 1.2rem 0;
+    }
+
     #header[state="closed"],  
     #header[state="open"] {
         transform: translateY(0);
@@ -572,7 +580,7 @@ a:active {
     }
    
     .main {
-        row-gap: 6em;
+        row-gap: 8em;
     }
 
     #video-container {
@@ -598,7 +606,7 @@ a:active {
     #hero {
         flex-direction: row;
         justify-content: space-between;
-        margin: 5em auto 0;
+        margin: 7em auto 0;
         padding: 3em 0;
         column-gap: 5vw;
         text-align: left;
@@ -621,7 +629,13 @@ a:active {
     }
 
     .main {
-        row-gap: 10em;
+        row-gap: 12em;
+    }
+
+    .testimonials__container {
+        grid-template-rows: auto;
+        grid-template-columns: repeat(4, 1fr);
+        column-gap: 4em;
     }
 
     .membership-info {

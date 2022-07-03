@@ -38,6 +38,13 @@ hamburger.addEventListener("click", () => {
             button.setAttribute("state", "hamburger");
         }
     })
-
 });
+
+
+document.addEventListener("click", (e) => {
+    if (!e.target.id) { // Works but not a really good solution
+        navBar.setAttribute("state", "closed");
+        header.setAttribute("state", "closed")
+    }
+})
 
