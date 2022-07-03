@@ -449,6 +449,10 @@ tbody tr {
     transition: transform 400ms ease;
 }
 
+#container__header-img {
+    display: inline-block;
+}
+
 #header-img {
     object-fit: contain;
     max-height: 50px;
