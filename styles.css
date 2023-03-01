@@ -576,9 +576,14 @@ iframe {
     border-radius: 20px;
 }
 
-.main-thank-you > .nav-link {
+.redirect {
     padding-top: 1.5em;
     width: max-content;
+    font-size: clamp(1rem, 0.5rem + 1.5vw, 1.3rem);
+}
+
+.redirect .nav-link {
+    font-weight: 600;
 }
 
 
