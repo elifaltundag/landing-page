@@ -578,6 +578,7 @@ iframe {
 
 .main-thank-you > .nav-link {
     padding-top: 1.5em;
+    width: max-content;
 }
 
 
