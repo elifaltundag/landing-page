@@ -570,6 +570,7 @@ iframe {
     background-image: linear-gradient(120deg, hsl(var(--clr-green)) 15%, hsl(var(--clr-blue)) 50%, hsl(var(--clr-purple)) 85%);
     color: hsl(var(--clr-light));
     padding: 2em;
+    margin-inline: 1em;
     display: flex;
     flex-direction: column;
     row-gap: 1em;
