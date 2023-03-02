@@ -143,6 +143,10 @@ td {
     font-size: clamp(1.8rem, 0.8rem + 3vw, 3rem);
 }
 
+.pricing-card__details {
+    font-size: clamp(1rem, 0.6rem + 0.5vw, 1.2rem);
+}
+
 .trial__details,
 .pricing-card__per-month {
     font-size:  clamp(1rem, 0.8rem + 2vw, 1.7rem);
@@ -162,6 +166,10 @@ td {
 
 .testimonial__person {
     font-weight: 600;
+}
+
+.per-month {
+    font-size: 0.5em;
 }
 
 
@@ -302,7 +310,7 @@ tbody tr {
 
 .pricing-card__details {
     margin-top: 2em;
-    text-align: left;
+    text-align: center;
 }
 
 /** Testimonials */
@@ -594,7 +602,7 @@ iframe {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         grid-template-rows: repeat(2, auto);
-        column-gap: 2em;
+        column-gap: 1em;
     }
 
     .pricing__container h3 {
@@ -678,6 +686,7 @@ iframe {
     .pricing__container {
         width: min(100%, 1100px);
         row-gap: 1em;
+        column-gap: 1.2em;
     }
 
     .footer {
@@ -715,9 +724,9 @@ iframe {
 
     }
 
-    /* .pricing-card {
-        min-width: 350px;
-    } */
+    .pricing-container {
+        column-gap: 2em;
+    }
 
     .trial__details {
         grid-column: 1 / span 2;
