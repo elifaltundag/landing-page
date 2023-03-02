@@ -110,7 +110,9 @@ p, label, input, textarea {
 }
 
 .nav-link,
-.follow-us {
+.follow-us,
+.social-media__link,
+.dev__link {
     font-size: clamp(1rem, 0.5rem + 1.5vw, 1.3rem);
 }
 
@@ -123,8 +125,7 @@ td {
     font-size: clamp(1.1rem, 0.6rem + 1.2vw, 1.5rem);
 }
 
-.btn,
-.social-media__link {
+.btn {
     font-size: clamp(1.2rem, 0.8rem + 1vw, 1.8rem);
     font-weight: 600;
 }
@@ -548,16 +549,7 @@ iframe {
 .footer {
     display: flex;
     flex-direction: column;
-    row-gap: 2rem;
-    justify-content: center;
-    align-items: center;
-}
-
-.social-media__list {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    column-gap: 2rem;
+    row-gap: 2em;
 }
 
 .thank-you {
@@ -689,11 +681,13 @@ iframe {
     }
 
     .footer {
-        display: flex;
-        flex-direction: row;
-        column-gap: 4rem;
-        justify-content: center;
-        align-items: center;
+        display: grid;
+        grid-template-columns: auto 1fr auto;
+        grid-template-rows: 1;
+    }
+
+    .source-code {
+        text-align: right;
     }
     
 }
@@ -704,20 +698,20 @@ iframe {
     }
 
     .main {
-        row-gap: 12em;
+        row-gap: 6em;
     }
 
     .testimonials__container {
         grid-template-rows: auto;
         grid-template-columns: repeat(4, 1fr);
-        column-gap: 4em;
+        column-gap: 3em;
     }
 
     .membership-info {
         display: grid;
         grid-template-rows: repeat(3, auto);
         grid-template-columns: repeat(2, auto);
-        column-gap: 4em;
+        column-gap: 3em;
 
     }
 
@@ -733,11 +727,15 @@ iframe {
 
 
 @media screen and (hover) {
-    .nav-link {
+    .nav-link,
+    .social-media__link,
+    .dev__link {
         position: relative;
     }
 
-    .nav-link::after {
+    .nav-link::after,
+    .social-media__link::after,
+    .dev__link::after {
         content: "";
         position: absolute;
         bottom: -0.2em;
@@ -751,16 +749,22 @@ iframe {
         transition: transform 400ms ease;
     }
 
-    .nav-link:hover::after {
+    .nav-link:hover::after,
+    .social-media__link:hover::after,
+    .dev__link:hover::after {
         transform: scaleX(1);
     }
 
-    .nav-link:focus {
+    .nav-link:focus,
+    .social-media__link:focus,
+    .dev__link:focus {
         outline-offset: 1em;
         outline-color: hsl(var(--clr-light));
     }
 
-    .nav-link:focus::after {
+    .nav-link:focus::after,
+    .social-media__link.nav-link:focus::after,
+    .dev__link.nav-link:focus::after {
         transform: scaleX(1);
     }
 }
